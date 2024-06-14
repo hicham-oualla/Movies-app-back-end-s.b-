@@ -1,5 +1,6 @@
 package com.project.moviesapp.Controller;
 
+import com.project.moviesapp.Dto.FilmDTO;
 import com.project.moviesapp.model.Film;
 import com.project.moviesapp.service.filmService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,17 +10,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/film")
+@RequestMapping("/api/film")
 public class FilmController {
     @Autowired
     filmService filmService;
     @GetMapping
 //     anotation pour returne une valeure
     @ResponseBody
-    public List<Film> getAllFilms() {
-        List<Film> films = filmService.getAllFilms();
+    public List<FilmDTO> getAllFilms() {
+        List<FilmDTO> films = filmService.getAllFilms();
         return films;
     }
+//    @ResponseBody
+//    public List<Film> getAllFilms() {
+//        List<Film> films = filmService.getAllFilms();
+//        return films;
+//    }
 
   @PostMapping
     @ResponseBody
