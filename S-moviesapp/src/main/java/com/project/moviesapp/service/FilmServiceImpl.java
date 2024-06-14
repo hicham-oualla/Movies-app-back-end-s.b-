@@ -31,20 +31,20 @@ public class FilmServiceImpl implements filmService {
 
 
 //    public List<FilmDTO> getAllFilms() {
-////        return filmRepository.findAll().stream().map(film -> {
-////            FilmDTO dto = new FilmDTO();
-////            dto.setId_film(film.getId_film());
-////            dto.setText(film.getText());
-////            dto.setDescription(film.getDescription());
-////            dto.setDate_debut(film.getDate_debut());
-////            dto.setDate_fin(film.getDate_fin());
-////            dto.setSaison(film.getSaison());
-////            dto.setGenre(film.getGenre());
-////            dto.setCreateur(film.getCreateur());
-////            dto.setActeur(film.getActeur());
-////            dto.setNote(film.getNote());
-////            return dto;
-////        }).collect(Collectors.toList());
+//        return filmRepository.findAll().stream().map(film -> {
+//            FilmDTO dto = new FilmDTO();
+//            dto.setId_film(film.());
+//            dto.setText(film.());
+//            dto.setDescription(film.getDescription());
+//            dto.setDate_debut(film.getDate_debut());
+//            dto.setDate_fin(film.getDate_fin());
+//            dto.setSaison(film.getSaison());
+//            dto.setGenre(film.getGenre());
+//            dto.setCreateur(film.getCreateur());
+//            dto.setActeur(film.getActeur());
+//            dto.setNote(film.getNote());
+//            return dto;
+//        }).collect(Collectors.toList());
 //    }
 
     @Override
