@@ -1,4 +1,4 @@
-package com.project.moviesapp.Dto;
+package c;
 
 import com.project.moviesapp.model.Film;
 import lombok.*;

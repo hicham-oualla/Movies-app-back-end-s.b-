@@ -9,6 +9,6 @@ import java.util.List;
 public interface SeriesService {
     Series saveseries(Series series);
     List<Series> getAllseries();
-    Series getFilmById(int id);
+    Series getserieById(int id);
 
 }

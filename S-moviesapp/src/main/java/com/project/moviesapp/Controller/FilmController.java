@@ -12,26 +12,22 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/film")
 public class FilmController {
+
     @Autowired
-    filmService filmService;
+    private filmService filmService;
+
     @GetMapping
-//     anotation pour returne une valeure
     @ResponseBody
     public List<FilmDTO> getAllFilms() {
-        List<FilmDTO> films = filmService.getAllFilms();
-        return films;
+        return filmService.getAllFilms();
     }
-//    @ResponseBody
-//    public List<Film> getAllFilms() {
-//        List<Film> films = filmService.getAllFilms();
-//        return films;
-//    }
 
-  @PostMapping
+    @PostMapping
     @ResponseBody
-    public Film saveFilm(@RequestBody Film film) {
-        return filmService.saveFilm(film);
-}
+    public FilmDTO saveFilm(@RequestBody Film film) {
+        Film savedFilm = filmService.saveFilm(film);
+        return FilmDTO.toDto(savedFilm);
+    }
 
     @DeleteMapping("/Delete/{id}")
     public ResponseEntity<Void> deleteFilm(@PathVariable int id) {

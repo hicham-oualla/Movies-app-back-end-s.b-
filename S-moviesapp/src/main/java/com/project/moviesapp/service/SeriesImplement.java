@@ -25,7 +25,7 @@ public class SeriesImplement implements SeriesService{
     }
 
     @Override
-    public Series getFilmById(int id) {
+    public Series getserieById(int id) {
         return null;
     }
 }

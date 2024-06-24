@@ -5,12 +5,10 @@ import com.project.moviesapp.model.Film;
 import com.project.moviesapp.repository.filmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
 public class FilmServiceImpl implements filmService {
@@ -25,27 +23,13 @@ public class FilmServiceImpl implements filmService {
 
     @Override
     public List<FilmDTO> getAllFilms() {
-        return List.of();
+        List<Film> films = (List<Film>) filmRepository.findAll();
+        List<FilmDTO> filmDTOs = new ArrayList<>();
+        for (Film film : films) {
+            filmDTOs.add(FilmDTO.toDto(film));
+        }
+        return filmDTOs;
     }
-
-
-
-//    public List<FilmDTO> getAllFilms() {
-//        return filmRepository.findAll().stream().map(film -> {
-//            FilmDTO dto = new FilmDTO();
-//            dto.setId_film(film.());
-//            dto.setText(film.());
-//            dto.setDescription(film.getDescription());
-//            dto.setDate_debut(film.getDate_debut());
-//            dto.setDate_fin(film.getDate_fin());
-//            dto.setSaison(film.getSaison());
-//            dto.setGenre(film.getGenre());
-//            dto.setCreateur(film.getCreateur());
-//            dto.setActeur(film.getActeur());
-//            dto.setNote(film.getNote());
-//            return dto;
-//        }).collect(Collectors.toList());
-//    }
 
     @Override
     public Film getFilmById(int id) {
